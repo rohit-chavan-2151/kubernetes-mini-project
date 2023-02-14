@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: node-todo-pod
+  namespace: node-todo-app
+spec:
+  containers: 
+    - name: node-todo-ctr
+      image: digirajsolutions/node-todo-app:latest
+      ports:
+        - containerPort: 8000

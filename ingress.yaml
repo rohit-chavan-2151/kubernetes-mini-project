@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: node-todo-ingress
+  namespace: node-todo-app
+spec:
+  rules:
+    - host: "node-todo-app.info"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: node-todo-service
+                port: 
+                  number: 80
